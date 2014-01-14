@@ -148,7 +148,7 @@ class Client {
         $wf = $waitFlush ? 'true' : 'false';
         $ws = $waitSearcher ? 'true' : 'false';
         $op = ($optimize) ? 'true' : 'false';
-        $rawPost = '<commit waitFlush="' . $wf . '" waitSearcher="' . $ws . '" optimize="' . $op . '" />';
+        $rawPost = '<commit waitSearcher="' . $ws . '" />';
 
         $this->rawPost($rawPost);
     }
@@ -164,7 +164,7 @@ class Client {
         $wf = $waitFlush ? 'true' : 'false';
         $ws = $waitSearcher ? 'true' : 'false';
 
-        $rawPost = '<optimize waitFlush="' . $wf . '" waitSearcher="' . $ws . '" maxSegments="' . $maxSegments . '" />';
+        $rawPost = '<optimize waitSearcher="' . $ws . '" maxSegments="' . $maxSegments . '" />';
 
         $this->rawPost($rawPost);
     }
